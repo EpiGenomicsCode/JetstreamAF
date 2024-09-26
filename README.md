@@ -27,12 +27,11 @@ This repository contains scripts and instructions for running AlphaFold on Jetst
    - `/home/vmathew/Desktop/gitrepo/JetstreamAF/design_tools/run_alphafold-gpu_2.3.2.py`
    - `/home/vmathew/Desktop/gitrepo/JetstreamAF/design_tools/run_alphafold-msa_2.3.1.py`
 
-   Update the following line in both files:
+   Update the following line in both files. If you're not updating hhblits, remove the following lines from both files:
    ```python
    hhblits_binary = os.path.expanduser('~/hh-suite/bin/hhblits')
    ```
-
-   If you're not updating hhblits, remove the following lines from both files:
+   
    ```python
    hhblits_binary = os.path.expanduser('~/hh-suite/bin/hhblits')
    f'--hhblits_binary_path={hhblits_binary}',
