@@ -38,7 +38,7 @@ def parse_args():
     'in case you are having issues with the relaxation stage.' )
 
   parser.add_argument(
-        '--output_dir', default='/home/vmathew/Desktop/temp/alphafold_run/OUTPUT',
+        '--output_dir', default='DEFINE_PATH/alphafold_run/OUTPUT',
         help='Path to a directory that will store the results.')
 
   parser.add_argument(
@@ -51,7 +51,7 @@ def parse_args():
     help='Path to directory where databases reside.')
 
   parser.add_argument(
-    '--singularity_image_path', default='/home/vmathew/Desktop/temp/alphafold_2.3.2-1_sandbox',
+    '--singularity_image_path', default='/DEFINE_PATH/alphafold_2.3.2-1',
     help='Path to the AlphaFold singularity image.')
 
   parser.add_argument(
