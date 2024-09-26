@@ -14,10 +14,10 @@ def parse_args():
     parser.add_argument('--fasta_paths', required=True, help='Paths to FASTA files, each containing a prediction target that will be folded one after another. If a FASTA file contains multiple sequences, then it will be folded as a multimer. Paths should be separated by commas. All FASTA paths must have a unique basename as the basename is used to name the output directories for each prediction.')
     parser.add_argument('--gpu_devices', default=os.environ.get('SGE_GPU', '0'), help='Comma separated list GPU identifiers to set environment variable CUDA_VISIBLE_DEVICES.')
     parser.add_argument('--use_gpu_relax', type=str_to_bool, default=True, help='Whether to do OpenMM energy minimization using GPU.')
-    parser.add_argument('--output_dir', default='/storage/group/u1o/default/vvm5242/temp', help='Path to a directory that will store the results.')
-    parser.add_argument('--data_dir', default='/storage/icds/RISE/sw8/alphafold/alphafold_2.3_db', help='Path to directory with supporting data: AlphaFold parameters and genetic and template databases. Set to the target of download_all_databases.sh.')
-    parser.add_argument('--mount_data_dir', default='/storage/icds/RISE/sw8/alphafold/alphafold_2.3_db', help='Path to directory where databases reside. On UCSF Wynton some of the databases are symbolic links to various locations in this directory and singularity needs to mount this directory to see them.')
-    parser.add_argument('--singularity_image_path', default='/storage/group/u1o/default/vvm5242/CONTAINER/alphafold-msa_2.3.1', help='Path to the AlphaFold singularity image.')
+    parser.add_argument('--output_dir', default='DEFINE_PATH/alphafold_run/OUTPUT', help='Path to a directory that will store the results.')
+    parser.add_argument('--data_dir', default='DEFINE_PATH/alphafold_2.3_db', help='Path to directory with supporting data: AlphaFold parameters and genetic and template databases. Set to the target of download_all_databases.sh.')
+    parser.add_argument('--mount_data_dir', default='DEFINE_PATH/alphafold_2.3_db', help='Path to directory where databases reside. On UCSF Wynton some of the databases are symbolic links to various locations in this directory and singularity needs to mount this directory to see them.')
+    parser.add_argument('--singularity_image_path', default='DEFINE_PATH/alphafold-msa_2.3.1', help='Path to the AlphaFold singularity image.')
     parser.add_argument('--max_template_date', default='2040-01-01', help='Maximum template release date to consider (ISO-8601 format: YYYY-MM-DD). Important if folding historical test sets.')
     parser.add_argument('--db_preset', default='full_dbs', choices=['full_dbs', 'reduced_dbs'], help='Choose preset MSA database configuration - smaller genetic database config (reduced_dbs) or full genetic database config (full_dbs)')
     parser.add_argument('--model_preset', default='multimer', choices=['monomer', 'monomer_casp14', 'monomer_ptm', 'multimer'], help='Choose preset model configuration - the monomer model, the monomer model with extra ensembling, monomer model with pTM head, or multimer model')
@@ -42,10 +42,10 @@ def main():
 
     hhblits_binary = os.path.expanduser('~/hh-suite/bin/hhblits')
     
-    args.output_dir = '/home/vmathew/Desktop/temp/alphafold_run/OUTPUT'
+    args.output_dir = 'DEFINE_PATH/alphafold_run/OUTPUT'
     args.data_dir = '/mnt/ceph/alphafold_databases'
     args.mount_data_dir = '/mnt/ceph/alphafold_databases'
-    args.singularity_image_path = '/home/vmathew/Desktop/temp/alphafold-msa_2.3.1.sif'
+    args.singularity_image_path = 'DEFINE_PATH/alphafold-msa_2.3.1.sif'
      
     # Set paths
     uniref90_database_path = os.path.join(args.data_dir, 'uniref90', 'uniref90.fasta')
