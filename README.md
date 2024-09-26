@@ -1,6 +1,6 @@
-# AlphaFold on Jetstream (Indiana University)
+# AlphaFold on Jetstream2 (Indiana University)
 
-This repository contains scripts and instructions for running AlphaFold on Jetstream at Indiana University.
+This repository contains scripts and instructions for running AlphaFold on Jetstream2 at Indiana University.
 
 ### Directory Structure
 
