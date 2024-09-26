@@ -8,7 +8,7 @@ This repository contains scripts and instructions for running AlphaFold on Jetst
 - `OUTPUT/`: The results of AlphaFold runs will be stored here.
 - `run_alphafold.sh`: The automation script that runs the MSA and strcuture prediction.
 - `design_tools/`: Contains the GPU and MSA scripts that are used by the run_alphafold.sh script.
-- `singularity.d/`: Contains the runscripts and configuration files for the Singularity container. Users should verify the contents of this directory in their built container, especially the `runscript` file, to ensure the correct entry point for AlphaFold is defined. If missing or incorrect, users may need to manually add or modify these files.
+- `singularity.d/`: Contains the runscripts and configuration files for the Singularity container. Users should verify the contents of this directory under ".singularity.d" in their built container, especially the `runscript` file, to ensure the correct entry point for AlphaFold is defined. (Ensure (.) dot files are visible.) If missing or incorrect, users may need to manually add or modify these files.
 
 ### Main Script: run_alphafold.sh
 
