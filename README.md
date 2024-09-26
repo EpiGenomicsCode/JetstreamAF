@@ -30,7 +30,7 @@ This script automates the process of running AlphaFold for multiple input sequen
 
 2. Build the Singularity container in your repository.
 
-3. Verify the contents of the `singularity.d` directory, especially:
+3. Verify the contents of the `.singularity.d` directory, especially:
    - runscript
    - Singularity
    - startscript
