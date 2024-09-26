@@ -54,7 +54,6 @@ This script automates the process of running AlphaFold for multiple input sequen
    ```
    
    ```python
-   hhblits_binary = os.path.expanduser('~/hh-suite/bin/hhblits')
    f'--hhblits_binary_path={hhblits_binary}',
    ```
 
