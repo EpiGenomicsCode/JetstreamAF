@@ -1,12 +1,12 @@
 #!/bin/bash
 
-WORKINGDIR="/home/vmathew/Desktop/temp/alphafold_run"
+WORKINGDIR="DEFINE_PATH"
 INPUT="$WORKINGDIR/FASTA_Temp"
 OUTPUT="$WORKINGDIR/OUTPUT"
 LOGFILE="$WORKINGDIR/job_status.log"
 
-ALPHAFOLD_MSA_SCRIPT="/home/vmathew/Desktop/design_tools/run_alphafold-msa_2.3.1.py"
-ALPHAFOLD_GPU_SCRIPT="/home/vmathew/Desktop/design_tools/run_alphafold-gpu_2.3.2.py"
+ALPHAFOLD_MSA_SCRIPT="DEFINE_PATH/design_tools/run_alphafold-msa_2.3.1.py"
+ALPHAFOLD_GPU_SCRIPT="DEFINE_PATH/design_tools/run_alphafold-gpu_2.3.2.py"
 
 mkdir -p "$INPUT"
 mkdir -p "$OUTPUT"
