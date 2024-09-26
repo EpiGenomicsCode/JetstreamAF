@@ -6,6 +6,8 @@ This repository contains scripts and instructions for running AlphaFold on Jetst
 
 - `FASTA_Temp/`: Place your input FASTA files in this directory. The script will process all `.fa` files in this directory.
 - `OUTPUT/`: The results of AlphaFold runs will be stored here.
+- `run_alphafold.sh`: The automation script that runs the MSA and strcuture prediction.
+- `design_tools/`: Contains the GPU and MSA scripts that are used by the run_alphafold.sh script.
 
 ### Main Script: run_alphafold.sh
 
@@ -59,7 +61,7 @@ This script automates the process of running AlphaFold for multiple input sequen
 
 1. Ensure all databases and dependencies are correctly set up.
 
-2. Use the provided scripts to run AlphaFold:
+2. Ensure the following python scripts under design_tools:
    - For GPU version: `run_alphafold-gpu_2.3.2.py`
    - For MSA version: `run_alphafold-msa_2.3.1.py`
 
