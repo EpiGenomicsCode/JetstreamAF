@@ -2,6 +2,26 @@
 
 This repository contains scripts and instructions for running AlphaFold on Jetstream at Indiana University.
 
+### Directory Structure
+
+- `FASTA_Temp/`: Place your input FASTA files in this directory. The script will process all `.fa` files in this directory.
+- `OUTPUT/`: The results of AlphaFold runs will be stored here.
+
+### run_alphafold.sh
+
+This script automates the process of running AlphaFold for multiple input sequences. Here's what it does:
+
+1. Sets up necessary directories and log files.
+2. Iterates through all `.fa` files in the `FASTA_Temp/` directory.
+3. For each file:
+   - Checks if MSA has already been generated (looks for `features.pkl`).
+   - If not, runs the MSA generation script (`run_alphafold-msa_2.3.1.py`).
+   - Runs the GPU prediction script (`run_alphafold-gpu_2.3.2.py`).
+   - Logs CPU and GPU usage during the run.
+   - Records execution times for both MSA generation and GPU prediction.
+
+To run the script:
+
 ## Setup Instructions
 
 1. Download the Singularity image:
