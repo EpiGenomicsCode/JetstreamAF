@@ -79,5 +79,3 @@ If you encounter any issues:
 1. Check the Singularity container's log files.
 2. Verify all paths and environment variables are correctly set.
 3. Ensure all required databases are accessible and up-to-date.
-
-For further assistance, please open an issue in this repository.
