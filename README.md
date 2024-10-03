@@ -58,7 +58,7 @@ This script automates the process of running AlphaFold for multiple input sequen
 
    c. Configure the build:
       ```bash
-      cmake -DCMAKE_INSTALL_PREFIX=. ..
+      cmake -DCMAKE_INSTALL_PREFIX=~/hh-suite ..
       ```
 
    d. Compile and install:
