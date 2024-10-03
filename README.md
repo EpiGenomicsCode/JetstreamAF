@@ -25,26 +25,51 @@ This script automates the process of running AlphaFold for multiple input sequen
 
 ## Setup Instructions
 
-1. Download the Singularity image:
+1. Install Apptainer (formerly Singularity):
+   - For Ubuntu/Debian:
+     ```bash
+     sudo apt update
+     sudo apt install -y software-properties-common
+     sudo add-apt-repository -y ppa:apptainer/ppa
+     sudo apt update
+     sudo apt install -y apptainer
+     ```
+   - For CentOS/RHEL:
+     ```bash
+     sudo yum install -y epel-release
+     sudo yum install -y apptainer
+     ```
+   - For macOS (using Homebrew):
+     ```bash
+     brew install --cask singularity
+     ```
+   - For other operating systems or detailed instructions, visit the [official Apptainer documentation](https://apptainer.org/docs/admin/main/installation.html).
+
+2. Verify the installation:
+   ```bash
+   apptainer --version
+   ```
+
+3. Download the Singularity image:
    - Option 1: Download from Sylabs (https://cloud.sylabs.io/library/prehensilecode/alphafold_singularity/alphafold)
    - Option 2: Download from the AlphaFold website
 
-2. Build the Singularity container in your repository.
+4. Build the Singularity container in your repository.
 
-3. Verify the contents of the `.singularity.d` directory, especially:
+5. Verify the contents of the `.singularity.d` directory, especially:
    - runscript
    - Singularity
    - startscript
    - Other relevant files
 
-4. Check your version of hhblits:
+6. Check your version of hhblits:
    ```
    hhblits --version
    ```
    If you get an "illegal command" error, you need to update hhblits. You can get it from:
    https://github.com/soedinglab/hh-suite.git
 
-5. Installing hhblits:
+7. Installing hhblits:
    
    a. Clone the repository:
       ```bash
@@ -67,7 +92,7 @@ This script automates the process of running AlphaFold for multiple input sequen
       ```
    e. Use the path as hh-suite/bin/hhblits and pass through --hhblits_binary_path into the gpu and msa scripts.
 
-6. Update hhblits paths in the following files:
+8. Update hhblits paths in the following files:
    - `/home/vmathew/Desktop/gitrepo/JetstreamAF/design_tools/run_alphafold-gpu_2.3.2.py`
    - `/home/vmathew/Desktop/gitrepo/JetstreamAF/design_tools/run_alphafold-msa_2.3.1.py`
 
