@@ -26,7 +26,7 @@ This script automates the process of running AlphaFold for multiple input sequen
 ## Setup Instructions
 
 1. Download the Singularity image:
-   - Option 1: Download from Sylabs
+   - Option 1: Download from Sylabs (https://cloud.sylabs.io/library/prehensilecode/alphafold_singularity/alphafold)
    - Option 2: Download from the AlphaFold website
 
 2. Build the Singularity container in your repository.
@@ -44,7 +44,29 @@ This script automates the process of running AlphaFold for multiple input sequen
    If you get an "illegal command" error, you need to update hhblits. You can get it from:
    https://github.com/soedinglab/hh-suite.git
 
-5. Update hhblits paths in the following files:
+5. Installing hhblits:
+   
+   a. Clone the repository:
+      ```bash
+      git clone https://github.com/soedinglab/hh-suite.git
+      ```
+
+   b. Create and navigate to the build directory:
+      ```bash
+      mkdir -p hh-suite/build && cd hh-suite/build
+      ```
+
+   c. Configure the build:
+      ```bash
+      cmake -DCMAKE_INSTALL_PREFIX=. ..
+      ```
+
+   d. Compile and install:
+      ```bash
+      make -j 4 && make install
+      ```
+
+6. Update hhblits paths in the following files:
    - `/home/vmathew/Desktop/gitrepo/JetstreamAF/design_tools/run_alphafold-gpu_2.3.2.py`
    - `/home/vmathew/Desktop/gitrepo/JetstreamAF/design_tools/run_alphafold-msa_2.3.1.py`
 
