@@ -65,6 +65,7 @@ This script automates the process of running AlphaFold for multiple input sequen
       ```bash
       make -j 4 && make install
       ```
+   e. Use the path as hh-suite/bin/hhblits and pass through --hhblits_binary_path into the gpu and msa scripts.
 
 6. Update hhblits paths in the following files:
    - `/home/vmathew/Desktop/gitrepo/JetstreamAF/design_tools/run_alphafold-gpu_2.3.2.py`
